@@ -53,7 +53,7 @@ $stm->execute();
 $r=$stm->fetchAll();
 $num=count($result);
 if ($num==0) {
-	print '<p>новостей нет</p>';
+	print '<p id="non">НОВОСТЕЙ НЕТ</p>';
 } else {
 	for ($i=0; 	$i<$num;	$i++) {
 		$st= $db->prepare("SELECT * FROM npc WHERE id=".$result[$i]['posted'].";");
