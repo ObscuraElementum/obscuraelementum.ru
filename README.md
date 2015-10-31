@@ -1,3 +1,3 @@
-# obscuraelementum.ru
-<a href="#">fdskjo</a>
-by быдлокодеры
+<body style="background:#000">
+    
+</body>
