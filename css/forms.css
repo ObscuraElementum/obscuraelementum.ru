@@ -51,6 +51,13 @@
 
 .userleft{
     margin: auto;
+    flex-direction: column;
+    display: flex;
+}
+.userleft select{
+        text-align: center;
+    padding: 10px 30px;
+    background: #4e6a79;
 }
 
 .login form {
