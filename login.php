@@ -7,7 +7,7 @@ include("config/config.php");
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
 $logIn=$_POST[log];
 $pas=$_POST[pas];
-$stg= $db=>prepare("SET NAMES utf8;");
+$stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
 $sth = $db->prepare("SELECT  * FROM npc WHERE login='".$logIn."';");
 $sth->execute();

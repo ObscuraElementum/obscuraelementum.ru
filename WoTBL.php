@@ -2,19 +2,9 @@
 if (!isset($_SESSION[auth])) {
 	session_start();
 }
-if(isset($_GET[out]))
-	{
-		unset($_SESSION[nik]);
-		unset($_SESSION[npc]);
-		unset($_SESSION[pas]);
-		unset($_SESSION[auth]);
-		if(!isset($_SESSION[auth])){
-			header( 'Location: https://obscuraelementum.ru', true, 301 );
-		}
-		}
 $shet=0;
 $hab='news';
-$paje='Главная';
+$paje='Моды для WoT Blitz';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('html/head.html'));
 if (isset($_SESSION[nik])) {
@@ -43,7 +33,7 @@ if (isset($_SESSION[nik])) {
 }
 include ('config/config.php');
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
-$sth = $db->prepare("SELECT * FROM topics WHERE filter=1;");
+$sth = $db->prepare("SELECT * FROM topics WHERE filter=5;");
 $stm=$db->prepare("SELECT * FROM 'npc';");
 $stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
@@ -65,62 +55,6 @@ if ($num==0) {
 	}
 }
 print join("", file("html/footer.html"));
-/*for ($i=0;
- $i<=$num;
- $i++) {
-	print('<div class="content" id="cb">
- <div class="contenttext">
- <header><time id="time" datetime="'.$result[$i][date].'">'.$result[$i][date].'</time> <h3 id="title">'.$result[$i][name]. '<h3 id="title">Дизайн сайта обновлён</h3><h4 id="avtor">');
-}
+?><?php
 
-print( '<div class="content" id="cb">
- <div class="contenttext">
- <header><time id="time" datetime="||20.08.2016">20.08.2016</time> <h3 id="title">Дизайн сайта обновлён</h3><h4 id="avtor">AlexVio</h4></header>
- <img>
- <p id="prev">Краткое описание</p>
- <footer><a>Коментарии</a><a href="#ссылка">Подробне</a></footer>
- </div>
- <div id="comments">
- <div id="coment">
- <header>
- <a>user</a>
- <button id="plus">+</button>
- <a id="rating">10</a>
- <button id="minus">-</button>
- </header>
- <div id="comentText">
- 
- </div>
- </div>
-
- <div id="coment">
- <header>
- <a>user</a>
- <button id="plus">+</button>
- <a id="rating">10</a>
- <button id="minus">-</button>
- </header>
- <div id="comentText">
- </div>
- </div>
-
- <div id="coment">
- <header>
- <a>user</a>
- <button id="plus">+</button>
- <a id="rating">10</a>
- <button id="minus">-</button>
- </header>
- <div id="comentText">
- 
- </div>
- </div>
- </div>
- </div>
- </section>
- </main>
- </body>
-</html><!--');
-print_r ($result);
-print '-->';*/
 ?>

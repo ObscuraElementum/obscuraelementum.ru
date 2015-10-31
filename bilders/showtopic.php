@@ -11,9 +11,13 @@ $code->execute();
 $topic->execute();
 $result = $topic->FETCH();
 $st= $db->prepare("SELECT * FROM npc WHERE id=$result[posted];");
+$comm=$db->prepare("SELECT * FROM comm WHERE fore=$post");
+$comm->execute();
 $st->execute();
 $r=$st->FETCH();
-$hab='news';
+$com=$comm->fetchAll();
+$num=count($com);
+$col=$num-1;
 $paje=$result[name].'|OE';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('../html/head.html'));
@@ -43,16 +47,21 @@ if (isset($_SESSION[nik])) {
 }
 		print('<div class="content" id="cb">
  <div class="contenttext">
- <header><time id="time" datetime="'.$result[date].'">'.$result[date].'</time> <h3 id="title">'.$result[name]. '</h3><h4 id="avtor">'.$r[nik].'</h4></header>'.$result[img].' <p id="prev">'.$result[info].'</p><footer><a>Коментарии</a><a href="#ссылка">Подробне</a></footer></div>');
-print '  <div id="comments" name="comm">
-<div id="coment">
+ <header><time id="time" datetime="'.$result[date].'">'.$result[date].'</time> <h3 id="title">'.$result[name]. '</h3><h4 id="avtor">'.$r[nik].'</h4></header>'.$result[img].' <p id="prev">'.$result[info].'</p><footer></footer></div>');
+print '  <div id="comments" name="comm">';
+for ($i=0; 	$i<$num;	$i++) {
+	$namee=$db->prepare("SELECT * FROM npc WHERE id=".$com[$col][id]);
+	$namee->execute();
+	$name=$namee->FETCH();
+	print "<div id='coment'>
  <header>
- <a>user</a>
- </header>
- <div id="comentText">
-<p>Даю старт!</p>
+ <a>".$name[nik]."</a><time id= datetime='".$com[$col][date]."'>".$com[$col][date]."</time> </header>
+ <div id='comentText'>
+<p>".$com[$col][text]."</p>
  </div>
- </div>
-</div>';
+ </div>";
+$col=$col-1;
+}
+print '</div>';
 print join("", file("../html/footer.html"));
 ?>

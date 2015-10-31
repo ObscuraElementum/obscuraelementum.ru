@@ -23,15 +23,45 @@
             animation: loginshow 1s 1 ease;
 }
 
+.userpanel{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #90a4ae;
+    align-items: stretch;
+    margin: auto;
+    width: 100%;
+}
+.userrigth{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.userrigth a{
+    text-align: center;
+    padding: 10px 30px;
+    background: #4e6a79;
+}
+
+.userrigth a:hover{
+    background: #343434;
+}
+
+.userleft{
+    margin: auto;
+}
+
 .login form {
     margin: auto;
     background: #b0bec5;
-    padding: 1%;
+    padding: 10px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 300px;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -39,6 +69,7 @@
             flex-direction: column;
     -webkit-transition: 1s ease;
             transition: 1s ease;
+    background: #90a4ae;
 }
 
 input::-webkit-input-placeholder {
@@ -59,6 +90,10 @@ input::-ms-placeholder {
 
 .login div#title {
     text-align: center;
+    width: 100%;
+}
+.login div#title p{
+    margin: auto auto auto 0;
 }
  
 .login form hr {
@@ -107,15 +142,15 @@ input::-ms-placeholder {
         -ms-flex-direction: column;
             flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+    min-width: 300px;
 }
 .logmain #title {
     width: 100%;
-    padding: 1%;
+    padding: 10px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-bottom: 10px;
     background: #b0bec5;
 }
 
@@ -128,7 +163,46 @@ input::-ms-placeholder {
     display: block;
     margin-top: 10px;
 }
-
+.топик{
+    display: flex;
+}
+.топик form{
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    display: block;
+    padding: 10px;
+}
+.топик form input{
+    width: 300px;
+}
+.топик form input[type="file"]{
+    border: none;
+    width: auto;
+}
+.топик form textarea{
+    width: 100%;
+    background: #b0bec5;
+    resize: vertical;
+}
+.titleed{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.titleed select{
+    display: block;
+    margin: auto;
+    padding: 10px;
+    background: #b0bec5;
+    color: #000;
+    border: none;
+    box-shadow: 0 0 0 2px #90a4ae;
+    width: 500px;
+    -webkit-transition: 50ms;
+            transition: 50ms;
+    margin: 2% 1%;
+}
 .login form a:hover {
     background: rgba(71, 181, 52, 0.35);
 }
@@ -137,7 +211,7 @@ form input {
     display: block;
     margin: auto;
     padding: 10px;
-    background: #90a4ae;
+    background: #b0bec5;
     color: #000;
     border: none;
     box-shadow: 0 0 0 2px #90a4ae;
@@ -290,13 +364,25 @@ section form input {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1% 1%;
+    padding: 10px;
     }
     .login .logmain{
         margin: auto 0;
-        width: 98%;
+        width: calc(100% - 20px);
     }
     .login{
         overflow-y: auto;
+    }
+    .userpanel{
+        flex-direction: column;
+    }
+    .userrigth {
+        margin: auto 10px;
+    }
+    .userrigth a{
+        margin: auto 10px;
+    }
+    .userleft a{
+        margin: auto 10px;
     }
 }
