@@ -1,0 +1,28 @@
+<body>
+    <div class="login" id="login">
+        <div class="logmain">
+            <div id="title"> Вход:
+                <button onclick="hidelogin();">&times;</button>
+            </div>
+            <form method="post" action="login.php">
+                <div class="logblock">
+                    <input type="text" required placeholder="Логин" autofocus id="log" name=log>
+                    <input type=password required placeholder="Пароль" id="pas" name=pas>
+                    <input type="submit" value="Вход" id="butlog">
+                </div>
+            </form>
+            
+            <form method="post" action="reg.php">
+                Регистрация:<br>
+                <div class="logblock">
+                    <input  type="text" required placeholder="Имя*" id="name" name="name">
+                    <input  type="text" placeholder="Фамилия" id="lnm" name="lnm">
+                    <input  type="email" required placeholder="E-mail*" id="mail" name="mail">
+                    <input  type="text" required placeholder="Логин*" id="log" name=log>
+                    <input  type="password" required placeholder="Пароль*" id="pas" name="pas">
+                    <input type="password" required placeholder="Повтор пароля*" id="pass" name="pass">
+                    <input type="submit" value="Регистация" id="butlog">
+                </div>
+            </form>
+        </div>
+    </div>

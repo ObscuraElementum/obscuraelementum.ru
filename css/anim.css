@@ -1,0 +1,14 @@
+@keyframes dropmenu {
+    0%{transform: rotateX(90deg)}
+    100%{transform: rotateX(360deg)}
+}
+
+@keyframes dropmenuhide {
+    0%{display: flex; transform: rotateX(90deg)}
+    100%{display: none;}
+}
+
+@keyframes loginshow {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}

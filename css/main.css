@@ -1,0 +1,804 @@
+@import url(anim.css);
+@import url(forms.css);
+
+@import "http://webfonts.ru/import/b20sans.css";
+
+@font-face {
+    font-family: 'Drugs';
+    src: url('/fonts/drugs.eot');
+    src: url('/fonts/drugs.eot?#iefix') format('embedded-opentype'), url('/fonts/drugs.woff') format('woff'), url('/fonts/drugs.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Drugs;
+    text-decoration: none;
+}
+
+#btnmenu
+{
+  margin-left:5px;
+}
+.loginBtn {
+    background: rgba(55, 71, 79, 0.5);
+    padding: 10px;
+    border: none;
+    -webkit-transition: 500ms;
+            transition: 500ms;
+    color: #fff;
+}
+
+.loginBtn:hover {
+    background: rgba(55, 71, 79, 0.5);
+    -moz-box-shadow: 0px 0px 0 5px rgba(62, 96, 113, 0.5);
+         box-shadow: 0px 0px 0 5px rgba(62, 96, 113, 0.5);
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+
+.loginBtn:active {
+    background: #0093ff;
+    -moz-box-shadow: 0px -10px 0 10px rgba(0, 147, 255, 0.61);
+         box-shadow: 0px -10px 0 10px rgba(0, 147, 255, 0.61);
+    -webkit-transition: 500ms;
+            transition: 500ms;
+    color: #000;
+}
+
+ul {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            -moz-box-pack: center;
+         justify-content: center;
+    background: rgba(55, 71, 79, 0.5);
+    max-height: 1000px;
+    -webkit-animation: dropmenuhide 1s 1;
+            animation: dropmenuhide 1s 1;
+}
+
+.dropmenu + ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    font-size: 20px;
+    -webkit-animation: dropmenu 1s 1;
+            animation: dropmenu 1s 1;
+}
+.menu{
+    padding: 10px;
+
+}
+.menu:hover{
+    background: #263238;
+}
+.dropmenu {
+    background: rgba(0, 216, 255, 0.3);
+    -webkit-transition: 1s;
+            transition: 1s;
+    font-size: 22px;
+    padding: 5px;
+}
+ul ul {
+    display: none;
+    font-size: 20px;
+}
+
+.rotare {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+         transform: rotate(90deg);
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+
+body {
+    background: #ffffff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            -moz-box-orient: horizontal;
+            -moz-box-direction: normal;
+         flex-direction: row;
+    -webkit-box-flex: 1;
+    -webkit-flex: auto;
+        -ms-flex: auto;
+            -moz-box-flex: 1;
+         flex: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body::section {
+    background: #000;
+    color: #fff;
+}
+
+main {
+    -webkit-box-flex: 15;
+    -webkit-flex-grow: 15;
+        -ms-flex-positive: 15;
+            -moz-box-flex: 15;
+         flex-grow: 15;
+    overflow-y: hidden;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            -moz-box-pack: start;
+         justify-content: flex-start;
+    height: 100%;
+    overflow-x: hidden;
+    background: rgb(207, 207, 207);
+}
+
+section {
+    padding: ;
+    /*display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+            align-self: auto;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;*/
+    overflow-y: visible;
+    overflow-x: hidden;
+    height: 100%;
+    
+}
+
+section header.main {
+    height: 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    background: #445760;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #000;
+    overflow: hidden;
+}
+
+.content {
+    /*-webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;*/
+    margin: 1%;
+    /*display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;*/
+    margin-bottom: 10px;
+    /*background: #b0bec5;*/
+    -webkit-transition: 1s;
+            transition: 1s;
+    max-width:100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    height: auto;
+    overflow: hidden;
+}
+
+.content p {
+    padding: 10px;
+    -webkit-box-flex: 80;
+    -webkit-flex-grow: 80;
+        -ms-flex-positive: 80;
+            -moz-box-flex: 80;
+         flex-grow: 80;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    min-height: 80px;
+    max-width: 100%;
+    overflow: auto;
+    text-align: center;
+    -moz-text-align-last: justify;
+         text-align-last: justify;
+}
+
+main .content img {
+    height: 300px;
+    margin: auto;
+     
+}
+
+.content footer {
+    -webkit-box-flex: 10;
+    -webkit-flex-grow: 10;
+        -ms-flex-positive: 10;
+            -moz-box-flex: 10;
+         flex-grow: 10;
+    background: #b0bec5;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            -moz-box-pack: justify;
+         justify-content: space-between;
+    color: #fff;
+}
+
+.content footer a {
+    padding: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.content footer a:hover {
+    color: #fff;
+}
+
+.content footer a:active {
+    color: #fff;
+    -moz-box-shadow: 0 0 0 5px rgba(55, 71, 79, 0.5);
+         box-shadow: 0 0 0 5px rgba(55, 71, 79, 0.5);
+}
+
+.contenttext {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    -webkit-box-flex: 10;
+    -webkit-flex-grow: 10;
+        -ms-flex-positive: 10;
+            -moz-box-flex: 10;
+         flex-grow: 10;
+    background: #b0bec5;
+}
+
+.contenttext header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    background: rgba(105, 131, 144, 0.91);
+    color: #fff;
+}
+
+.contenttext header time {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            -moz-box-flex: 1;
+         flex-grow: 1;
+    padding: 5px;
+}
+
+.contenttext header h3 {
+    -webkit-box-flex: 10;
+    -webkit-flex-grow: 10;
+        -ms-flex-positive: 10;
+            -moz-box-flex: 10;
+         flex-grow: 10;
+    text-align: center;
+    padding: 5px;
+    background: #4a7286;
+}
+
+
+.contenttext header h4 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            -moz-box-flex: 1;
+         flex-grow: 1;
+    padding: 5px;
+    text-align: right;
+}
+
+.contenttext header h4:hover {
+    background: rgba(55, 71, 79, 0.5);
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+
+.contenttext header h4:active {
+    background: rgba(71, 121, 145, 0.5);
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+.contenttext footer{
+    
+}
+
+.leftpanel {
+    width: 200px;
+    margin: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            -moz-box-align: stretch;
+         align-items: stretch;
+    -webkit-flex-basis: 200px;
+        -ms-flex-preferred-size: 200px;
+            flex-basis: 200px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            -moz-box-flex: 1;
+         flex-grow: 1; 
+    -webkit-align-self: stretch; 
+        -ms-flex-item-align: stretch; 
+            align-self: stretch;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+               -moz-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+    background: #607d8b; 
+    font-size: 22px;
+    font-synthesis: weight;
+    -webkit-transition: 1s left;
+            transition: 1s left;
+    color: #fff;
+    overflow: auto;
+    height: 100vh;
+}
+
+.leftpanel img {
+    width: 100%;
+}
+
+nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    -webkit-transition: 1s;
+            transition: 1s;
+    -webkit-box-flex: 5;
+    -webkit-flex-grow: 5;
+        -ms-flex-positive: 5;
+            -moz-box-flex: 5;
+         flex-grow: 5;
+}
+
+a {
+    padding: 5%;
+    color: #fff;
+}
+
+a:hover {
+    background: #263238;
+    color: #fff;
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+
+a:active {
+    background: #263238;
+    color: #fff;
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+
+#dropmc:target {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-transition: 1s;
+            transition: 1s;
+}
+
+.add {
+    height: auto;
+    -webkit-flex-basis: 100px;
+        -ms-flex-preferred-size: 100px;
+            flex-basis: 100px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            -moz-box-flex: 1;
+         flex-grow: 1;
+    -webkit-transition: 250ms;
+            transition: 250ms;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+}
+.add:hover{
+    background: #263238;
+}
+
+.add a{
+    margin: auto;
+    text-align: center;
+    font-size: 0.7em;
+    -webkit-flex-basis: 100px;
+        -ms-flex-preferred-size: 100px;
+            flex-basis: 100px;
+}
+.add a:hover{
+    background: none;
+}
+
+#button {
+    display: none;
+}
+
+.leftpanel h3 {
+    text-align: center;
+}
+
+section header.main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row-revers;
+        -ms-flex-direction: row-revers;
+            -moz-box-orient: horizontal;
+            -moz-box-direction: normal;
+         flex-direction: row-revers;
+    background: #263238;
+}
+
+section header.main a {
+    font-size: 10px;
+    margin: auto;
+    display: none;
+    position: fixed;
+    padding: 5px;
+}
+
+section header.main a:hover {
+    color: #989898;
+    background: none;
+}
+
+section header.main p {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    font-size: 1.5em;
+    -webkit-box-flex: 20;
+    -webkit-flex-grow: 20;
+        -ms-flex-positive: 20;
+            -moz-box-flex: 20;
+         flex-grow: 20;
+    margin: 0 0 0 10px;
+    margin-left: 50px;
+    -webkit-transition: 1s;
+            transition: 1s;
+    padding: 5px;
+}
+
+section footer .copyrite {
+    margin: auto;
+    background: none;
+    padding: 5px;
+    -webkit-transition: 1s;
+            transition: 1s;
+}
+section footer .copyrite:hover {
+    background: none;
+    text-shadow: 0 0 10px;
+
+}
+section footer.mainfoot{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    background: #263238;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+}
+#user {
+    height: 90%;
+    margin: auto;
+    width: 90%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+#user a{
+	padding: 10%;
+    color: #000;
+    -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+            align-self: stretch;
+}
+#user a:hover {
+    color: #fff;
+}
+
+#user img {
+    height: 300px;
+    width: 300px;
+    margin: auto 0 auto auto;
+}
+#user menu{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+	height: 300px;
+    margin: auto auto auto 0;
+}
+
+#comments{
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    background: rgba(55, 71, 79, 0.5);
+}
+
+#coment{
+    background: rgba(255, 255, 255, 0.46);
+    margin: 1px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+         flex-direction: column;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+}
+#comentText{
+    min-height: 10%;
+    margin: 5px;
+    background: rgba(53, 119, 131, 0.3);
+    padding: 1px;
+}
+#coment header{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            -moz-box-orient: horizontal;
+            -moz-box-direction: normal;
+         flex-direction: row;
+}
+
+#coment header button{
+    background: none;
+    border: none;
+    opacity: none;
+    font-size: 1.5em;
+    -webkit-flex-basis: 1em;
+        -ms-flex-preferred-size: 1em;
+            flex-basis: 1em;
+    -webkit-transition: 500ms;
+            transition: 500ms;
+}
+
+a#rating:hover{
+    background: none;
+    color: #000000;
+}
+
+#coment header button:hover {
+    background: rgba(55, 71, 79, 0.5);
+}
+
+#plus{
+    margin: auto 0 auto auto;
+}
+
+#coment header a{
+    margin: 0;
+    padding: 5;
+    color: #000;
+}
+
+#coment header a:hover{
+    color: #fff;
+}
+
+@media screen and (max-width: 760px) {
+    body {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                -moz-box-orient: vertical;
+                -moz-box-direction: normal;
+             flex-direction: column;
+        -webkit-box-flex: 1;
+        -webkit-flex: auto;
+            -ms-flex: auto;
+                -moz-box-flex: 1;
+             flex: auto;
+        -webkit-box-align: stretch;
+        -webkit-align-items: stretch;
+            -ms-flex-align: stretch;
+                -moz-box-align: stretch;
+             align-items: stretch;
+    }
+    .leftpanel {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: flex;
+        position: fixed;
+        left: -200px;
+        font-size: 20px;
+    }
+    section header.main {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                -moz-box-pack: justify;
+             justify-content: space-between;
+        height: 50px;
+        border-bottom: 1px solid;
+    }
+    section .content header h3, time{
+        font-size: 14px;
+    }
+
+    .leftpanel h3 {
+        display: none;
+    }
+    main {
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    section {
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    section header.main a {
+        font-size: 35px;
+        padding: 0 1;
+        -webkit-align-self: stretch;
+            -ms-flex-item-align: stretch;
+                align-self: stretch;
+        margin: auto;
+        display: block;
+        -webkit-transition: 1s;
+                transition: 1s;
+    }
+    section header.main a:hover {
+        color: #989898;
+    }
+    section header.main p {
+        content: 'OE';
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                align-self: center;
+        font-size: 1.5em;
+    }
+    .login form {
+        width: 100%;
+        /*height: 50%*/
+    }
+    .content {
+        width: 98%;
+    }
+}
+#error{
+	background: rgba(255, 82, 82, 0.50);
+	box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.50), 0 0 5px rgba(100, 0, 0, 0.5) inset;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    color: #222;
+}
