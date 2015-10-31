@@ -1,3 +1,3 @@
 # obscuraelementum.ru
-гавнокод ;)\n
+гавнокод ;) <br>
 by быдлокодеры
