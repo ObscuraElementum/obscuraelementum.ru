@@ -802,3 +802,6 @@ a#rating:hover{
     text-align: center;
     color: #222;
 }
+#non{
+	margin: auto;
+}
