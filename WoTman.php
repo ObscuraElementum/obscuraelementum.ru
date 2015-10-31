@@ -4,7 +4,7 @@ if (!isset($_SESSION[auth])) {
 }
 $shet=0;
 $hab='news';
-$paje='Моды для WoT';
+$paje='Мануалы по WoT';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('html/head.html'));
 if (isset($_SESSION[nik])) {
