@@ -33,7 +33,7 @@ if (isset($_SESSION[nik])) {
 }
 include ('config/config.php');
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
-$sth = $db->prepare("SELECT * FROM topics WHERE filter=2;");
+$sth = $db->prepare("SELECT * FROM topics WHERE filter=5;");
 $stm=$db->prepare("SELECT * FROM 'npc';");
 $stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
@@ -55,4 +55,6 @@ if ($num==0) {
 	}
 }
 print join("", file("html/footer.html"));
+?><?php
+
 ?>
