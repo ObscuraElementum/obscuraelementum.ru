@@ -1,3 +1,3 @@
 # obscuraelementum.ru
-гавнокод ;) <br>
+<a href="#">fdskjo</a>
 by быдлокодеры
