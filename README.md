@@ -1,3 +1,3 @@
-<body style="background:#000">
+<body style="background-color:#000">
     
 </body>
