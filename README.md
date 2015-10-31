@@ -1,0 +1,2 @@
+# obscuraelementum.ru
+гавнокод ;)
