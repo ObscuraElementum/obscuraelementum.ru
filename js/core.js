@@ -10,36 +10,47 @@ var password = document.getElementById('pas');
 var validpass = document.getElementById('pass');
 var sumbit = document.getElementById('sumbit');
 var reglogin = document.getElementById('log');
+var visibleLeftPanel = false;
 
+window.onload = function(){
+    oetit();
+}
 
-window.onresize = oetit();
-window.onload = oetit();
+window.onresize = function(){
+    oetit();
+}
 
 function displayPanel() {
-    leftPanel.style.left = '0px';
-    btnMenu.style.marginLeft = '205px';
-    ttl.innerHTML = 'OE';
-    ttl.style.marginLeft = '240px';
-    btnMenu.classList.toggle('rotare');
-    loginBtn.style.display = "none";
-    btnMenu.setAttribute('onclick', 'hidePanel();');
+    switch (visibleLeftPanel) {
+    case false:
+        leftPanel.style.left = '0px';
+        btnMenu.style.marginLeft = '205px';
+        ttl.innerHTML = 'OE';
+        oetit();
+        ttl.style.marginLeft = '240px';
+        btnMenu.classList.toggle('rotare');
+        loginBtn.style.display = "none";
+        visibleLeftPanel = true
+        break;
+    default:
+        leftPanel.style.left = '-200px';
+        btnMenu.style.marginLeft = '5px';
+        btnMenu.classList.remove('rotare');
+        ttl.innerHTML = 'Obscura Elementum';
+        ttl.style.marginLeft = '50px';
+        oetit();
+        loginBtn.style.display = "block";
+        visibleLeftPanel = false;
+    }
 }
-
-function hidePanel() {
-    leftPanel.style.left = '-200px';
-    btnMenu.style.marginLeft = '5px';
-    btnMenu.classList.remove('rotare');
-    ttl.innerHTML = 'Obscura Elementum';
-    ttl.style.marginLeft = '50px';
-    oetit();
-    loginBtn.style.display = "block";
-    btnMenu.setAttribute('onclick', 'displayPanel();');
-}
-
 function oetit() {
-    var scrWid = window.screen.availHeight;
+    var scrWid = document.documentElement.clientWidth;
+    console.log(scrWid);
+    console.error(scrWid);
     if (scrWid <= 720)
         ttl.innerHTML = 'OE';
+    if (scrWid > 720)
+        ttl.innerHTML = 'Obscura Elementum';
 }
 
 function showmenu(event, element) {

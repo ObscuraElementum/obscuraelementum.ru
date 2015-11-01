@@ -1,16 +1,36 @@
+<!--<html>
+
+<head>
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/forms.css" rel="stylesheet">
+</head>
+-->
 <body>
     <div class="login" id="login">
         <div class="logmain">
-            <div id="title"> Панелька юзера:
+            <div id="title"> 
+               <p>Панель пользователя:</p>
                 <button onclick="hidelogin();">&times;</button>
             </div>
-            <form method="post" action="login.php">
-                <div class="logblock">
-								<img src="/media/img/logo.png" width="10px" height="10px" >
-                    <a>Настройки</a><br>
-								<a> Профиль</a><br>
-								<a href="https://obscuraelementum.ru/index.php?out=true">Выход</a>
+            <div class="userpanel">
+                <div class="userleft">
+                    <img src="/media/img/logo.png" width="200px">
+                    <select>
+                        <option disabled>
+                            -темы-
+                        </option>
+                    </select>
                 </div>
-            </form>
+                <div class="userrigth">
+                    <a>Настройки</a>
+                    <br>
+                    <a> Профиль</a>
+                    <br>
+                    <a href="https://obscuraelementum.ru/index.php?out=true">Выход</a>
+                </div>
+            </div>
         </div>
     </div>
+<!--</body>
+
+</html>-->
