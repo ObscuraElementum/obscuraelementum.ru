@@ -29,11 +29,9 @@
 @keyframes menuBtnshow1 {
     0% {
         transform: rotateZ(0deg);
-        transform: translateY(0px);
     }
     100% {
-        transform: rotateZ(-45deg);
-        transform: translateY(10px);
+        transform: rotateZ(360deg);
     }
 }
 

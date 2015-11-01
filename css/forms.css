@@ -1,15 +1,16 @@
-*:focus{
+*:focus {
     outline: none;
 }
+
 .login {
     -webkit-animation: loginshow 1s 1 ease reverse;
-            animation: loginshow 1s 1 ease reverse;
+    animation: loginshow 1s 1 ease reverse;
     position: absolute;
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, 0.55);
     -webkit-transition: 1s;
-            transition: 1s;
+    transition: 1s;
     display: none;
     z-index: 1000;
 }
@@ -20,10 +21,10 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-animation: loginshow 1s 1 ease;
-            animation: loginshow 1s 1 ease;
+    animation: loginshow 1s 1 ease;
 }
 
-.userpanel{
+.userpanel {
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -33,29 +34,31 @@
     margin: auto;
     width: 100%;
 }
-.userrigth{
+
+.userrigth {
     margin: auto;
     display: flex;
     flex-direction: column;
 }
 
-.userrigth a{
+.userrigth a {
     text-align: center;
     padding: 10px 30px;
     background: #4e6a79;
 }
 
-.userrigth a:hover{
+.userrigth a:hover {
     background: #343434;
 }
 
-.userleft{
+.userleft {
     margin: auto;
     flex-direction: column;
     display: flex;
 }
-.userleft select{
-        text-align: center;
+
+.userleft select {
+    text-align: center;
     padding: 10px 30px;
     background: #4e6a79;
 }
@@ -72,10 +75,10 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-transition: 1s ease;
-            transition: 1s ease;
+    transition: 1s ease;
     background: #90a4ae;
 }
 
@@ -99,10 +102,11 @@ input::-ms-placeholder {
     text-align: center;
     width: 100%;
 }
-.login div#title p{
+
+.login div#title p {
     margin: auto auto auto 0;
 }
- 
+
 .login form hr {
     box-shadow: 0px 5px 10px;
     border: 1px solid #bebebe;
@@ -123,7 +127,7 @@ input::-ms-placeholder {
     height: 35px;
     width: 35px;
     -webkit-transition: 500ms;
-            transition: 500ms;
+    transition: 500ms;
     box-shadow: 0 0 0 1px #ef5350;
 }
 
@@ -138,7 +142,7 @@ input::-ms-placeholder {
 }
 
 .login .logmain {
-	margin: auto;
+    margin: auto;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -146,11 +150,12 @@ input::-ms-placeholder {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
     min-width: 300px;
 }
+
 .logmain #title {
     width: 100%;
     padding: 10px;
@@ -170,34 +175,61 @@ input::-ms-placeholder {
     display: block;
     margin-top: 10px;
 }
-.топик{
-    display: flex;
+
+.топик {
+    height: auto;
 }
-.топик form{
+
+.топик form {
     margin: auto;
-    height: 90%;
+    height: auto;
     width: 90%;
-    display: block;
     padding: 10px;
+    display: block;
 }
-.топик form input{
-    width: 300px;
+
+.топик form p {
+    margin: auto;
+    text-align: center;
+    padding: 20px 0 0 0;
 }
-.топик form input[type="file"]{
-    border: none;
+
+.топик form input {
     width: auto;
 }
-.топик form textarea{
+
+.топик form input[type="file"] {
+    border: none;
+    margin: auto;
+    width: 100%;
+}
+
+.топик form textarea {
     width: 100%;
     background: #b0bec5;
     resize: vertical;
+    margin: 1px auto;
+    padding: 10px;
 }
-.titleed{
+
+.tithead,
+.titfoot {
     display: flex;
     justify-content: space-around;
-    
+    height: auto;
+    margin: auto;
+    width: 100%;
+    align-content: stretch;
+    align-items: stretch
 }
-.titleed select{
+
+.tithead {
+    flex-direction: column;
+    height: auto;
+}
+
+.titleed select,
+.titfoot select {
     display: block;
     margin: auto;
     padding: 10px;
@@ -205,11 +237,20 @@ input::-ms-placeholder {
     color: #000;
     border: none;
     box-shadow: 0 0 0 2px #90a4ae;
-    width: 500px;
     -webkit-transition: 50ms;
-            transition: 50ms;
-    margin: 2% 1%;
+    transition: 50ms;
+    margin: 2;
+    height: auto;
+    flex-grow: 1;
 }
+
+.titleed input,
+.titfoot input {
+    margin: 2;
+    padding: 10px;
+    flex-grow: 1;
+}
+
 .login form a:hover {
     background: rgba(71, 181, 52, 0.35);
 }
@@ -224,7 +265,7 @@ form input {
     box-shadow: 0 0 0 2px #90a4ae;
     width: 100%;
     -webkit-transition: 50ms;
-            transition: 50ms;
+    transition: 50ms;
     margin: 2% 1%;
 }
 
@@ -238,17 +279,16 @@ form input {
     box-shadow: 0 0 0 2px #00ff31;
     color: #000;
     -webkit-transition: 500ms;
-            transition: 500ms;
+    transition: 500ms;
     padding: 1px;
     font-size: 20px;
     margin-top: 10%;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #butlog:hover {
     box-shadow: 0 0 0 3px rgba(0, 255, 49, 0.49);
     background: rgba(0, 255, 49, 0.79);
-	
 }
 
 #butlog:active {
@@ -269,7 +309,7 @@ form input:focus {
     color: #000;
     box-shadow: 0 0 0 2px rgb(0, 206, 255);
     -webkit-transition: 100ms;
-            transition: 100ms;
+    transition: 100ms;
 }
 
 form input:invalid {
@@ -284,12 +324,12 @@ section form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     padding: 10% 30%;
 }
 
-section form p{
+section form p {
     padding: 30px;
     text-align: center;
     border: none;
@@ -297,7 +337,7 @@ section form p{
     padding-top: 0;
 }
 
-form p{
+form p {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -305,12 +345,13 @@ form p{
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     box-shadow: none;
     background: none;
 }
-form p input{
+
+form p input {
     display: block;
     margin: auto;
     padding: 10px;
@@ -320,15 +361,16 @@ form p input{
     box-shadow: 0 0 0 0px #90a4ae;
     width: auto;
     -webkit-transition: 50ms;
-            transition: 50ms;
+    transition: 50ms;
     margin: 2% 1%;
 }
 
-#valid{
+#valid {
     height: 10px;
 }
 
-#sumbit:disabled, #sumbit:hover:disabled{
+#sumbit:disabled,
+#sumbit:hover:disabled {
     background: #404040;
     box-shadow: 0 0 0 0px #00ff31;
     border: none;
@@ -339,7 +381,7 @@ form p input{
     box-shadow: 0 0 0 2px #00ff31;
     color: #000;
     -webkit-transition: 500ms;
-            transition: 500ms;
+    transition: 500ms;
     padding: 10px;
     font-size: 20px;
     margin-top: 10%;
@@ -362,34 +404,34 @@ section form input {
 
 @media screen and (max-width: 760px) {
     section form {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
         -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 10px;
+        flex-direction: column;
+        padding: 10px;
     }
-    .login .logmain{
+    .login .logmain {
         margin: auto 0;
         width: calc(100% - 20px);
     }
-    .login{
+    .login {
         overflow-y: auto;
     }
-    .userpanel{
+    .userpanel {
         flex-direction: column;
     }
     .userrigth {
         margin: auto 10px;
     }
-    .userrigth a{
+    .userrigth a {
         margin: auto 10px;
     }
-    .userleft a{
+    .userleft a {
         margin: auto 10px;
     }
 }
