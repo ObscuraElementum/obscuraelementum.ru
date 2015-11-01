@@ -2,3 +2,4 @@ User-agent: *
 Disallow:
 
 Sitemap: http://obscuraelementum.ru/sitemap.xml
+
