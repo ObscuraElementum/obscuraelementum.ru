@@ -22,7 +22,7 @@ $paje=$result[name].'|OE';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('../html/head.html'));
 if (isset($_SESSION[nik])) {
-	print join('', file('..html/authpanel.html'));
+	print join('', file('../html/authpanel.html'));
 	print join('', file('../html/menu.html'));
 	print '            <div class="add">
                 <a href="/zak.php">Рекламное место сдаётся</a>
