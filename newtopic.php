@@ -2,16 +2,6 @@
 if (!isset($_SESSION[auth])) {
 	session_start();
 }
-if(isset($_GET[out]))
-	{
-		unset($_SESSION[nik]);
-		unset($_SESSION[npc]);
-		unset($_SESSION[pas]);
-		unset($_SESSION[auth]);
-		if(!isset($_SESSION[auth])){
-			header( 'Location: https://obscuraelementum.ru', true, 301 );
-		}
-		}
 $shet=0;
 $hab='news';
 $paje='Главная';
