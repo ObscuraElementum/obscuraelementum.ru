@@ -19,7 +19,7 @@
 #btnmenu {
     margin: auto 5px auto auto;
     margin-left: 5px;
-    display: flex;
+    display: none;
     height: 50px;
     transition: 1000ms;
 }
@@ -29,7 +29,23 @@
 }
 
 #btnmenu svg line {
-    box-shadow: 0 0 10px;
+    transform: rotateZ(0deg);
+    transform: scaleX(30px);
+    transform: translateY(0px);
+    transition: 1s;
+}
+
+#btnmenu svg.active #one {
+    transform: matrix(0.9, -0.4, 0, 1.5, 2, 9);
+}
+
+#btnmenu svg.active #to {
+    transform: matrix(1, -1, 0, 1, 30, 0);
+    opacity: 0;
+}
+
+#btnmenu svg.active #tree {
+    transform: matrix(0.9, 0.4, 0, 1.5, 2, -24);
 }
 
 .loginBtn {
@@ -809,6 +825,9 @@ a#rating:hover {
     }
     .content {
         width: 98%;
+    }
+    #btnmenu {
+        display: flex;
     }
 }
 

@@ -10,47 +10,48 @@ var password = document.getElementById('pas');
 var validpass = document.getElementById('pass');
 var sumbit = document.getElementById('sumbit');
 var reglogin = document.getElementById('log');
+var menusvg = document.querySelector("#btnmenu svg");
 var visibleLeftPanel = false;
 
-window.onload = function(){
+window.onload = function () {
     oetit();
 }
 
-window.onresize = function(){
+window.onresize = function () {
     oetit();
 }
 
 function displayPanel() {
-    switch (visibleLeftPanel) {
-    case false:
+
+    if (visibleLeftPanel) {
+        leftPanel.style.left = '-200px';
+        btnMenu.style.marginLeft = '5px';
+        ttl.innerHTML = 'Obscura Elementum';
+        ttl.style.marginLeft = '50px';
+        oetit();
+        menusvg.classList.remove("active");
+        loginBtn.style.display = "block";
+        visibleLeftPanel = false;
+    } else {
         leftPanel.style.left = '0px';
         btnMenu.style.marginLeft = '205px';
         ttl.innerHTML = 'OE';
         oetit();
         ttl.style.marginLeft = '240px';
-        btnMenu.classList.toggle('rotare');
+        menusvg.classList.toggle("active");
         loginBtn.style.display = "none";
-        visibleLeftPanel = true
-        break;
-    default:
-        leftPanel.style.left = '-200px';
-        btnMenu.style.marginLeft = '5px';
-        btnMenu.classList.remove('rotare');
-        ttl.innerHTML = 'Obscura Elementum';
-        ttl.style.marginLeft = '50px';
-        oetit();
-        loginBtn.style.display = "block";
-        visibleLeftPanel = false;
+        visibleLeftPanel = true;
     }
 }
+
 function oetit() {
     var scrWid = document.documentElement.clientWidth;
-    console.log(scrWid);
-    console.error(scrWid);
     if (scrWid <= 720)
         ttl.innerHTML = 'OE';
     if (scrWid > 720)
         ttl.innerHTML = 'Obscura Elementum';
+    ttl.style.marginLeft = '50px';
+    loginBtn.style.display = "block";
 }
 
 function showmenu(event, element) {
