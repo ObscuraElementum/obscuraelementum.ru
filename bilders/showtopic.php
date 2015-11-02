@@ -50,7 +50,7 @@ if (isset($_SESSION[nik])) {
  <header><time class="timekom" id="time" datetime="'.$result[date].'">'.$result[date].'</time> <h3 id="title">'.$result[name]. '</h3><h4 id="avtor">'.$r[nik].'</h4></header>'.$result[img].' <p id="prev">'.$result[info].'</p><footer>');
 if($result[download]==NULL){
 	print'</footer></div>';
-}else{print "<a href='$result[download]'>Скачать</a></footer>";}
+}else{print "<a href='$result[download]'>Скачать</a></footer></div>";}
 print '  <div id="comments" name="comm">';
 for ($i=0; 	$i<$num;	$i++) {
 	$namee=$db->prepare("SELECT * FROM npc WHERE id=".$com[$col][id]);
