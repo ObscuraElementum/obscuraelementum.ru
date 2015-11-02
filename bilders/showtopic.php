@@ -4,6 +4,7 @@ if (!isset($_SESSION[auth])) {
 }
 include ('../config/config.php');
 $post=$_GET[post];
+if (empty($_GET[post]) or $_GET[post]<=0){$post=2;}
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
 $topic = $db->prepare("SELECT * FROM topics WHERE post=$post;");
 $code= $db->prepare("SET NAMES utf8;");
@@ -18,6 +19,18 @@ $r=$st->FETCH();
 $com=$comm->fetchAll();
 $num=count($com);
 $col=$num-1;
+if(empty($result[name])){
+$post=2;
+$topic = $db->prepare("SELECT * FROM topics WHERE post=$post;");
+$topic->execute();
+$result = $topic->FETCH();
+$st= $db->prepare("SELECT * FROM npc WHERE id=$result[posted];");
+$comm=$db->prepare("SELECT * FROM comm WHERE fore=$post");
+$comm->execute();
+$st->execute();
+$r=$st->FETCH();
+$com=$comm->fetchAll();
+}
 $paje=$result[name].'|OE';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('../html/head.html'));
