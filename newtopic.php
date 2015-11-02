@@ -33,14 +33,22 @@ include ('config/config.php');
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
 $stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
+if($_FILES['userfile']['type']==' image/gif'or $_FILES['userfile']['type']=='image/png'or $_FILES['userfile']['type']==' image/jpeg' or $_FILES['userfile']['type']==JPEG){
+	$go=true;
+}else{$go=false;}
+if($filtera==='WoT PC' && $filterb==='Моды'){$fil=2;}elseif($filtera==='WoT PC' && $filterb==='Мaнуал'){$fil=4;}elseif($filtera==='WoT PC' && $filterb==='Видео'){$fil=3;}
+elseif($filtera==='WoT Bitz' && $filterb==='Моды'){$fil=5;}elseif($filtera==='WoT Bitz' && $filterb==='Мaнуал'){$fil=7;}elseif($filtera==='WoT Bitz' && $filterb==='Видео'){$fil=6;}else{$fil=0;}
 if ($_SESSION[auth]===100){
 	print join('', file('html/makeform.html'));
 }else{print'<p id=error>Вы не авторизованны!</p>';}
 print join("", file("html/footer.html"));
-if (isset($_POST[name])&& $_SESSION[auth]===100&&$_FILES['userfile']['type']==' image/gif'&&$_FILES['userfile']['type']=='image/png'&&$_FILES['userfile']['type']==' image/jpeg'&&$_FILES['userfile']['type']==JPEG)
+if (!empty($_POST[name])&&!empty($_POST[info])&&!empty($_POST[smalinfo])&& $_SESSION[auth]===100 && $go)
 {
-	copy($_FILES[userfile][tmp_name], 'www/obscuraelementum.ru/media/img/');
-	$str=array($_POST[name], $_POST[smalinfo], $_POST[info], $_SESSION[id], $_POST[img], $fil, $_POST[dw]);
+	$h=tempnam('media/img/',$_SESSION[npc]);
+	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
+	$h=str_replace($s, "", $h);
+	copy($_FILES[userfile][tmp_name], 'media/img/');
+	$str=array($_POST[name], $_POST[smalinfo], $_POST[info], $_SESSION[npc], $h, $fil, $_POST[dw]);
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
