@@ -2,9 +2,7 @@
 if (!isset($_SESSION[auth])) {
 	session_start();
 }
-$shet=0;
-$hab='news';
-$paje='Главная';
+$paje='Создать запись';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('html/head.html'));
 if (isset($_SESSION[nik])) {
