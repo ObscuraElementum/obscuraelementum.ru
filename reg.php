@@ -2,7 +2,7 @@
 if (!isset($_SESSION[auth])) {
 	session_start();
 }
-$repl=array(" ","\\", "\f", "\e","\t", "\n","\r","\v", "\$", "*");
+$repl=array(" ","\\", "\f", "\e","\t", "\n","\r","\v", "\$", "*", "?",  "&");
 $logIn=str_replace($repl, "",$_POST[log]);
 $pas=str_replace($repl, "",$_POST[pas]);
 $pass=str_replace($repl, "",$_POST[pass]);
