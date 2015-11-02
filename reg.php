@@ -198,7 +198,7 @@ if(!$re==NULL){
 	$_SESSION[npc]=$result[id];
 	$_SESSION[pas]=$result[password];
 	$_SESSION[auth]=100;
-	if($_SESSION[auth]=100){header( 'Location: https://obscuraelementum.ru', true, 301 );}
-	print $result[name].',вы аторизованны, но зах вы пытаетесь сломать сценарий?';
+	if($_SESSION[auth]=100){header( 'Location: https://obscuraelementum.ru', true, 302 );}
+	print $result[name].', произошла непредвиденная ошибка, сообщите администрации!';
 }
 ?>

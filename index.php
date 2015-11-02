@@ -89,7 +89,7 @@ print( '<div class="content" id="cb">
  <button id="minus">-</button>
  </header>
  <div id="comentText">
-
+ 
  </div>
  </div>
 
@@ -112,7 +112,7 @@ print( '<div class="content" id="cb">
  <button id="minus">-</button>
  </header>
  <div id="comentText">
-
+ 
  </div>
  </div>
  </div>
