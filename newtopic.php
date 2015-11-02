@@ -39,7 +39,7 @@ if ($_SESSION[auth]===100){
 print join("", file("html/footer.html"));
 if (isset($_POST[name])&& $_SESSION[auth]===100&&$_FILES['userfile']['type']==' image/gif'&&$_FILES['userfile']['type']=='image/png'&&$_FILES['userfile']['type']==' image/jpeg'&&$_FILES['userfile']['type']==JPEG)
 {
-	
+	copy($_FILES[userfile][tmp_name], 'www/obscuraelementum.ru/media/img/');
 	$str=array($_POST[name], $_POST[smalinfo], $_POST[info], $_SESSION[id], $_POST[img], $fil, $_POST[dw]);
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
