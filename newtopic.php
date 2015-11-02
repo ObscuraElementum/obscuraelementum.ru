@@ -42,7 +42,7 @@ print join("", file("html/footer.html"));
 if (isset($_POST[])&& $_SESSION[auth]===100)
 {
 	$str=array('');
-	$sql='';
+	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
 }
