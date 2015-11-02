@@ -1,15 +1,17 @@
 <div class="топик">
-    <form method="post" action="/newtopic.php">
+    <form method="post" action="/newtopic.php" enctype="multipart/form-data">
+			<input type="hidden" name="MAX_FILE_SIZE" value="1536" />
         <div class="tithead">
             <input type="text" placeholder="Название">
+					<p>Максимальный размер файла: 1.5 мб.(1 536 байт)</p>
             <input type="file">
         </div>
         <p>Краткое описание:</p>
-        <textarea value="текст статьи">
+        <textarea placeholder="краткое описание">
         </textarea>
         <p>Основной текст, для форматирования
             <wbr> используйте html теги:</p>
-        <textarea value="текст статьи">
+        <textarea placeholder="Основной текст">
         </textarea>
         <div class="titfoot">
             <select>
