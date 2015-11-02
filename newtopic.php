@@ -47,6 +47,7 @@ if (!empty($_POST[name])&&!empty($_POST[info])&&!empty($_POST[smalinfo])&& $_SES
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$h=str_replace($s, "", $h);
+	$h='<img src="/media/img/'.$h.'">';
 	copy($_FILES[userfile][tmp_name], 'media/img/');
 	$str=array($_POST[name], $_POST[smalinfo], $_POST[info], $_SESSION[npc], $h, $fil, $_POST[dw]);
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
