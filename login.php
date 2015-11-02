@@ -3,10 +3,11 @@ if (!isset($_SESSION[auth]))
 	{
 		session_start();
 	}
+$repl=array(" ","\\", "\f", "\e","\t", "\n","\r","\v", "\$", "*", "?",  "&");
 include("config/config.php");
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
-$logIn=$_POST[log];
-$pas=$_POST[pas];
+$logIn=str_replace($repl, "",$_POST[log]);
+$pas=str_replace($repl, "",$_POST[pas]);
 $stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
 $sth = $db->prepare("SELECT  * FROM npc WHERE login='".$logIn."';");
@@ -20,7 +21,7 @@ if(md5(md5($pas))==$result[password]){
 	if($_SESSION[auth]=100){
 		header( 'Location: https://obscuraelementum.ru', true, 301 );
 	}
-}elseif($_POST[pas]==NULL or $_POST[log]==NULL){
+}elseif(empty($_POST[pas]) or empty($_POST[log])){
 		print 'Я тебе НЕ верю!!! Ты, код страницы меняешь!';
 }elseif(md5(md5($pas))!=$result[password]){
 	$paje='Вход:';
