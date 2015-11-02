@@ -35,8 +35,15 @@ include ('config/config.php');
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
 $stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
-if ($_SESSION[auth]==100){
+if ($_SESSION[auth]===100){
 	print join('', file('html/makeform.html'));
 }else{print'<p id=error>Вы не авторизованны!</p>';}
 print join("", file("html/footer.html"));
+if (isset($_POST[])&& $_SESSION[auth]===100)
+{
+	$str=array('');
+	$sql='';
+	$sth=$db->prepare($sql);
+	$sth->execute($str);
+}
 ?>
