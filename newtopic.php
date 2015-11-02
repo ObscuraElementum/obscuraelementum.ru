@@ -37,7 +37,7 @@ if ($_SESSION[auth]===100){
 	print join('', file('html/makeform.html'));
 }else{print'<p id=error>Вы не авторизованны!</p>';}
 print join("", file("html/footer.html"));
-if (isset($_POST[name])&& $_SESSION[auth]===100)
+if (isset($_POST[name])&& $_SESSION[auth]===100&&$_FILES['userfile']['type']==' image/gif'&&$_FILES['userfile']['type']=='image/png'&&$_FILES['userfile']['type']==' image/jpeg'&&$_FILES['userfile']['type']==JPEG)
 {
 	
 	$str=array($_POST[name], $_POST[smalinfo], $_POST[info], $_SESSION[id], $_POST[img], $fil, $_POST[dw]);

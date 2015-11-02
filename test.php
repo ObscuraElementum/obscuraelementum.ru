@@ -1,18 +1,3 @@
 <?
-if ($h==NULL){print 'null  ';}
-if ($h==0){print'nol';}
-if(empty($h)){print'пусто ';}
-print '
-';
-$h='';
-if ($h==NULL){print 'null  ';}
-if ($h==0){print"noll
-".$h;}
-if(empty($h)){print'пусто ';}
-print'
-';
-$h=0;
-if ($h==NULL){print 'null  ';}
-if ($h==0){print'nol';}
-if(empty($h)){print'пусто ';}
+print'<form enctype="multipart/form-data" action="/test.php" method="POST"> <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла --> <input type="hidden" name="MAX_FILE_SIZE" value="1572864" /> <!-- Название элемента input определяет имя в массиве $_FILES --> Отправить этот файл: <input name="userfile" type="file" /> <input type="submit" value="Send File" /> </form>'; print_r ($_FILES);
 ?>
