@@ -61,7 +61,7 @@ if ($num==0) {
 		$l=$st->fetchAll();
 		print('<div class="content" id="cb">
  <div class="contenttext">
- <header><time id="time" datetime="'.$result[$i][date].'">'.$result[$i][date].'</time> <h3 id="title">'.$result[$i][name]. '</h3><h4 id="avtor">'.$l[0][nik].'</h4></header>'.$result[$i]['img'].' <p id="prev">'.$result[$i]['smallinfo'].'</p><footer><a href="/bilders/showtopic.php?post='.$result[$i][post].'">Подробне</a></footer></div>');
+ <header><time id="time" datetime="'.$result[$i][date].'">'.$result[$i][date].'</time> <h3 id="title">'.$result[$i][name]. '</h3><h4 id="avtor">'.$l[0][nik].'</h4></header>'.$result[$i]['img'].' <p id="prev">'.$result[$i]['smallinfo'].'</p><footer><a href="/bilders/showtopic.php?post='.$result[$i][post].'">Подробне</a></footer></div></div>');
 	}
 }
 print join("", file("html/footer.html"));

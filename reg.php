@@ -13,6 +13,9 @@ $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
 $sth = $db->prepare("SELECT * FROM npc;");
 $stg= $db->prepare("SET NAMES utf8;");
 $stm = $db->prepare("SELECT  * FROM npc WHERE login='".$logIn."';");
+$stj = $db->prepare("SELECT  * FROM npc WHERE email='".$mail."';");
+$stj->execute();
+$wroom=$stj->FETCH();
 $stm->execute();
 $re=$stm->FETCH();
 $stg->execute();
@@ -44,7 +47,33 @@ if(!$re==NULL){
                 </div>
             </form>";
 	print join("", file("html/footer.html"));
-}elseif(empty($logIn)){
+}elseif(!$wroom==NULL){$paje='Регистрация:';
+	print ('<html><head><title>'.$paje.'</title>');
+	print join('', file('html/head.html'));
+	print join('', file('html/loginform.html'));
+	print join('', file('html/menu.html'));
+	print '            <div class="add">
+                <a href="/zak.php">Рекламное место сдаётся</a>
+            </div>
+        </div>
+        <main>
+            <section>';
+	print join('', file('html/panel.html'));
+	print join('', file('html/paneledns.html'));
+	print '<p id="error">E-mail занят</p>';
+	print"           <form method='post' action='reg.php'>
+                Регистрация:<br>
+                <div class='logblock'>
+                    <input  type='text' required placeholder='Имя*' value='$_POST[name]' id='name' name='name'>
+                    <input  type='text' placeholder='Фамилия' id='lnm' value='$_POST[lnm]' name='lnm'>
+                    <input  type='email' required placeholder='E-mail*' value='$_POST[mail]' id='mail' name='mail'>
+                    <input  type='text' required placeholder='Логин*'  id='log' name='log'>
+                    <input  type='password' required placeholder='Пароль*' id='pas' name='pas'>
+                    <input type='password' required placeholder='Повтор пароля*' id='pass' name='pass'>
+                    <input type='submit' value='Регистация' id='butlog'>
+                </div>
+            </form>";
+	print join("", file("html/footer.html"));}elseif(empty($logIn)){
 	$paje='Регистрация:';
 	print ('<html><head><title>'.$paje.'</title>');
 	print join('', file('html/head.html'));

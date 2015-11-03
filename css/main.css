@@ -831,6 +831,15 @@ a#rating:hover {
     color: #222;
 }
 
+#sucsess {
+    background: rgba(82, 255, 82, 0.5);
+    box-shadow: 0 0 10px 2px rgba(0, 255, 0, 0.5), 0 0 5px rgba(8, 100, 0, 0.5) inset;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    color: #222;
+}
+
 #coment header time {
     margin: auto 10 auto auto;
 }
