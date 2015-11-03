@@ -3,13 +3,12 @@ if (!isset($_SESSION[auth])) {
 	session_start();
 }
 $repl=array(" ","\\", "\f", "\e","\t", "\n","\r","\v", "\$", "*", "?",  "&");
-$sended=str_replace($repl, "",$_POST[send]);
+$sended=str_replace($repl, "",$_POST[sended]);
 $name=str_replace($repl, "",$_POST[name]);
 $sinfo=str_replace($repl, "",$_POST[smalinfo]);
 $info=str_replace($repl, "",$_POST[info]);
 $link=str_replace($repl, "",$_POST[link]);
-
-
+if (!empty($sended)){$sended=true;}else{$sended=false;}
 if($_FILES[userfile][size]==0){go==false;}else{$go=true;}
 if(!$_FILES[dw][size]==0){
     $fileNam=$_FILES[dw][name];
@@ -17,14 +16,13 @@ if(!$_FILES[dw][size]==0){
 		$fileRas=$fileRas->getExtension();
     if($fileRas=='php' or $fileRas=='html' or$fileRas=='css' or$fileRas=='js'){$fileRas=='txt';}
     $gggg=tempnam('media/files/',$_SESSION[npc]);
-	$sw='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
+	$sw='/var/www/u0100975/data/www/obscuraelementum.ru/media/files/';
 	$gggg=str_replace($sw, "", $gggg);
 	copy($_FILES[dw][tmp_name], 'media/files/'.$gggg.'.'.$fileRas);
 	$dw='/media/files/'.$gggg.'.'.$fileRas;}elseif(!empty($link)){$link=$_POST[link];$dw=$link;}else{$dw=NULL;}
 $filtera=$_POST[filtera];
 $filterb=$_POST[filterb];
 $paje='Создать запись';
-if(!empty($sended)){$sended=true;}else{$sended=false;}
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('html/head.html'));
 if (isset($_SESSION[nik])) {
