@@ -35,7 +35,7 @@ include ('config/config.php');
 $db = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASSWORD);
 $stg= $db->prepare("SET NAMES utf8;");
 $stg->execute();
-if($_FILES['userfile']['type']==' image/gif'or $_FILES['userfile']['type']=='image/png'or $_FILES['userfile']['type']==' image/jpeg' or $_FILES['userfile']['type']==JPEG){
+if($_FILES['userfile']['type']==' image/gif'or $_FILES['userfile']['type']=='image/png'or $_FILES['userfile']['type']==' image/jpeg' or $_FILES['userfile']['type']=='image/pjpeg'){
 	$go=true;
 }else{$go=false;}
 if($filtera=='WoT PC' && $filterb=='Моды'){
