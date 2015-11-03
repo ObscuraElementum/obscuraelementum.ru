@@ -2,17 +2,20 @@
     <form method="post" action="/newtopic.php" enctype="multipart/form-data">
 			<!--<input type="hidden" name="MAX_FILE_SIZE" value="" />-->
         <div class="tithead">
-            <input type="text" placeholder="Название" name=name>
+            <input required type="text" placeholder="Название" name=name>
 					<p>Максимальный размер файла: 1.5 мб.</p>
-            <input type="file" name="userfile">
+            <input type="file" required name="userfile">
         </div>
         <p>Краткое описание:</p>
-        <textarea placeholder="краткое описание"  name=smalinfo>
-        </textarea>
+        <textarea placeholder="краткое описание" required name=smalinfo></textarea>
         <p>Основной текст, для форматирования
             <wbr> используйте html теги:</p>
-        <textarea placeholder="Основной текст" name=info>
-        </textarea>
+        <textarea required placeholder="Основной текст" name=info></textarea>
+			<p>Файл для скачиваний(не обязательно) максимальный размер(вместе с фото и другими формами. На формы расчёт 1символ-1байт):32мб</p>
+			<input type=file name=dw>
+			<p>Для ссылки всё ограниченно файлообменником</p>
+			<input type=text placeholder="Ссылка на скачивание(при необходимости)">
+			<p>Выбирете раздел:</p>
         <div class="titfoot">
             <select name="filtera">
                 <option>WoT PC</option>
@@ -23,7 +26,7 @@
                 <option>Мaнуал</option>
 						<option>Видео</option>
             </select>
-            <input type="submit" placeholder="Публикуем">
+            <input type="submit" value="Опубликовать">
         </div>
     </form>
 </div>
