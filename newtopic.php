@@ -2,6 +2,8 @@
 if (!isset($_SESSION[auth])) {
 	session_start();
 }
+$filtera=$_POST[filtera];
+$filterb=$_POST[filterb];
 $paje='Создать запись';
 print ('<html><head><title>'.$paje.'</title>');
 print join('', file('html/head.html'));
@@ -36,8 +38,21 @@ $stg->execute();
 if($_FILES['userfile']['type']==' image/gif'or $_FILES['userfile']['type']=='image/png'or $_FILES['userfile']['type']==' image/jpeg' or $_FILES['userfile']['type']==JPEG){
 	$go=true;
 }else{$go=false;}
-if($filtera=='WoT PC' && $filterb=='Моды'){$fil=2;}elseif($filtera=='WoT PC' && $filterb=='Мaнуал'){$fil=4;}elseif($filtera=='WoT PC' && $filterb=='Видео'){$fil=3;}
-elseif($filtera=='WoT Bitz' && $filterb=='Моды'){$fil=5;}elseif($filtera=='WoT Bitz' && $filterb=='Мaнуал'){$fil=7;}elseif($filtera=='WoT Bitz' && $filterb=='Видео'){$fil=6;}else{$fil=0;}
+if($filtera=='WoT PC' && $filterb=='Моды'){
+	$fil=2;
+}elseif($filtera=='WoT PC' && $filterb=='Мaнуал'){
+	$fil=4;
+}elseif($filtera=='WoT PC' && $filterb=='Видео'){
+	$fil=3;
+}elseif($filtera=='WoT Bitz' && $filterb=='Моды'){
+	$fil=5;
+}elseif($filtera=='WoT Bitz' && $filterb=='Мaнуал'){
+	$fil=7;
+}elseif($filtera=='WoT Bitz' && $filterb=='Видео'){
+	$fil=6;
+}else{
+	$fil=0;
+}
 if ($_SESSION[auth]===100){
 	print join('', file('html/makeform.html'));
 }else{print'<p id=error>Вы не авторизованны!</p>';}
