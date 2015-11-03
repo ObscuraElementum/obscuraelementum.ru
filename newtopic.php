@@ -7,17 +7,20 @@ $sended=str_replace($repl, "",$_POST[send]);
 $name=str_replace($repl, "",$_POST[name]);
 $sinfo=str_replace($repl, "",$_POST[smalinfo]);
 $info=str_replace($repl, "",$_POST[info]);
-$link=str_replase($repl, "",$_POST[link])
-if($_FILES[userfile][size]==0){go==false;}else{go=true;}
+$link=str_replace($repl, "",$_POST[link]);
+
+
+if($_FILES[userfile][size]==0){go==false;}else{$go=true;}
 if(!$_FILES[dw][size]==0){
     $fileNam=$_FILES[dw][name];
     $fileRas= new SplFileInfo($fileNam);
+		$fileRas=$fileRas->getExtension();
     if($fileRas=='php' or $fileRas=='html' or$fileRas=='css' or$fileRas=='js'){$fileRas=='txt';}
-    $gggg=tempnam('media/img/',$_SESSION[npc]);
-	$sw='/var/www/u0100975/data/www/obscuraelementum.ru/media/files/';
+    $gggg=tempnam('media/files/',$_SESSION[npc]);
+	$sw='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$gggg=str_replace($sw, "", $gggg);
-	copy($_FILES[userfile][tmp_name], 'media/files/'.$h.'.'.$fileRas);
-	$dw='/media/files/'.$gggg.'.'.$fileRas;}elseif(!empty($link)){$dw=$link;}
+	copy($_FILES[dw][tmp_name], 'media/files/'.$gggg.'.'.$fileRas);
+	$dw='/media/files/'.$gggg.'.'.$fileRas;}elseif(!empty($link)){$link=$_POST[link];$dw=$link;}else{$dw=NULL;}
 $filtera=$_POST[filtera];
 $filterb=$_POST[filterb];
 $paje='Создать запись';
@@ -71,7 +74,7 @@ if ($_SESSION[auth]===100 && !$sended){
 	print join('', file('html/makeform.html'));
 }elseif($_SESSION[auth]===100 && $sended){print'<p id=sucsess>Ваша запись обрабатывается сервером =) Возможно она уже отправленна в базу данных(проверьте). Запрос не обработается если:НЕ УКАЗАННЫ ОБЯЗАТЕЛЬНЫЕ ПРАМЕТРЫ ФОРМЫ, НЕТУ ЛОГО ИЛИ ОНО ИМЕЕТ НЕИЗВЕСТНЫЙ ФОРМАТ!</p>';}else{print'<p id=error>Вы не авторизованны!</p>';}
 print join("", file("html/footer.html"));
-if (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_FILES['userfile']['type']==' image/gif' && $go)
+if (!empty($name)&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_FILES['userfile']['type']==' image/gif' && $go)
 {
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
@@ -82,8 +85,11 @@ if (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_F
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
-}elseif (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_FILES['userfile']['type']=='image/png' && $go)
+}elseif (!empty($name)&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_FILES['userfile']['type']=='image/png' && $go)
 {
+	$name=$_POST[name];
+$info=$_POST[info];
+$sinfo=$_POST[smalinfo];
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$h=str_replace($s, "", $h);
@@ -93,8 +99,11 @@ if (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_F
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
-}elseif (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_FILES['userfile']['type']=='image/jpeg' && $go)
+}elseif (!empty($name)&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_FILES['userfile']['type']=='image/jpeg' && $go)
 {
+	$name=$_POST[name];
+$info=$_POST[info];
+$sinfo=$_POST[smalinfo];
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$h=str_replace($s, "", $h);
@@ -104,8 +113,11 @@ if (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_F
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
-}elseif (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100&& $_FILES['userfile']['type']=='image/pjpeg' && $go)
+}elseif (!empty($name)&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100&& $_FILES['userfile']['type']=='image/pjpeg' && $go)
 {
+	$name=$_POST[name];
+$info=$_POST[info];
+$sinfo=$_POST[smalinfo];
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$h=str_replace($s, "", $h);
@@ -115,8 +127,11 @@ if (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_F
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
-}elseif (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100&& $_FILES['userfile']['type']=='image/svg+xml' && $go)
+}elseif (!empty($name)&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100&& $_FILES['userfile']['type']=='image/svg+xml' && $go)
 {
+	$name=$_POST[name];
+$info=$_POST[info];
+$sinfo=$_POST[smalinfo];
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$h=str_replace($s, "", $h);
@@ -126,8 +141,11 @@ if (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100 && $_F
 	$sql='INSERT INTO topics (name, smallinfo, info, posted, img, filter, download) VALUES  (?, ?, ?, ?, ?, ?, ?)';
 	$sth=$db->prepare($sql);
 	$sth->execute($str);
-}elseif (!empty($name])&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100&& $_FILES['userfile']['type']=='image/tiff' && $go)
+}elseif (!empty($name)&&!empty($info)&&!empty($sinfo)&& $_SESSION[auth]===100&& $_FILES['userfile']['type']=='image/tiff' && $go)
 {
+	$name=$_POST[name];
+$info=$_POST[info];
+$sinfo=$_POST[smalinfo];
 	$h=tempnam('media/img/',$_SESSION[npc]);
 	$s='/var/www/u0100975/data/www/obscuraelementum.ru/media/img/';
 	$h=str_replace($s, "", $h);
