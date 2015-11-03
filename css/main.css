@@ -183,26 +183,10 @@ main {
 }
 
 section {
-    padding: ;
-    /*display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-            align-self: auto;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;*/
     overflow-y: visible;
     overflow-x: hidden;
     height: 100%;
+    margin-left: 200;
 }
 
 section header.main {
@@ -425,6 +409,7 @@ main .content img {
     color: #fff;
     overflow: auto;
     height: 100vh;
+    position: fixed;
 }
 
 .leftpanel img {
@@ -685,10 +670,13 @@ section footer.mainfoot {
 }
 
 #comentText {
-    min-height: 10%;
     margin: 5px;
     background: rgba(53, 119, 131, 0.3);
     padding: 1px;
+}
+
+#comentText p {
+    min-height: auto;
 }
 
 #coment header {
@@ -799,6 +787,7 @@ a#rating:hover {
     section {
         overflow-y: auto;
         overflow-x: auto;
+        margin-left: 0;
     }
     section header.main a {
         font-size: 35px;
