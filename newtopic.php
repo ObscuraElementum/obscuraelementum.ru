@@ -8,8 +8,9 @@ $name=str_replace($repl, "",$_POST[name]);
 $sinfo=str_replace($repl, "",$_POST[smalinfo]);
 $info=str_replace($repl, "",$_POST[info]);
 $link=str_replace($repl, "",$_POST[link]);
+
 if (!empty($sended)){$sended=true;}else{$sended=false;}
-if($_FILES[userfile][size]==0){go==false;}else{$go=true;}
+if($_FILES[userfile][size]==0){$go==false;}else{$go=true;}
 if(!$_FILES[dw][size]==0){
     $fileNam=$_FILES[dw][name];
     $fileRas= new SplFileInfo($fileNam);
