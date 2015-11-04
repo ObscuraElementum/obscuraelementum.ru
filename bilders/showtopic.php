@@ -78,6 +78,6 @@ for ($i=0; 	$i<$num;	$i++) {
  </div>";
 $col=$col-1;
 }
-print '</div>';
+print '</div></div>';
 print join("", file("../html/footer.html"));
 ?>

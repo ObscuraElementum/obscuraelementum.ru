@@ -42,16 +42,18 @@ $result = $sth->fetchAll();
 $stm->execute();
 $r=$stm->fetchAll();
 $num=count($result);
+$col=$num-1;
 if ($num==0) {
 	print '<p id="non">НОВОСТЕЙ НЕТ</p>';
 } else {
 	for ($i=0; 	$i<$num;	$i++) {
-		$st= $db->prepare("SELECT * FROM npc WHERE id=".$result[$i]['posted'].";");
+		$st= $db->prepare("SELECT * FROM npc WHERE id=".$result[$col]['posted'].";");
 		$st->execute();
 		$l=$st->fetchAll();
 		print('<div class="content" id="cb">
  <div class="contenttext">
- <header><time id="time" datetime="'.$result[$i][date].'">'.$result[$i][date].'</time> <h3 id="title">'.$result[$i][name]. '</h3><h4 id="avtor">'.$l[0][nik].'</h4></header>'.$result[$i]['img'].' <p id="prev">'.$result[$i]['smallinfo'].'</p><footer><a href="/bilders/showtopic.php?post='.$result[$i][post].'">Подробне</a></footer></div></div>');
+ <header><time id="time" datetime="'.$result[$col][date].'">'.$result[$col][date].'</time> <h3 id="title">'.$result[$col][name]. '</h3><h4 id="avtor">'.$l[0][nik].'</h4></header>'.$result[$col]['img'].' <p id="prev">'.$result[$col]['smallinfo'].'</p><footer><a href="/bilders/showtopic.php?post='.$result[$col][post].'">Подробне</a></footer></div></div>');
+	$col=$col-1;
 	}
 }
 print join("", file("html/footer.html"));
